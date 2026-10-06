@@ -24,7 +24,6 @@
             line-height: 1.8;
         }
 
-        /* 上部固定ナビゲーション */
         nav.site-nav {
             background-color: #ffffff;
             border-bottom: 1px solid #eae6df;
@@ -43,10 +42,7 @@
             align-items: center;
         }
 
-        .nav-brand {
-            text-decoration: none;
-        }
-
+        .nav-brand { text-decoration: none; }
         .nav-logo-text {
             font-weight: bold;
             color: var(--primary);
@@ -71,11 +67,8 @@
             transition: color 0.2s;
         }
 
-        .nav-links li a:hover {
-            color: var(--accent);
-        }
+        .nav-links li a:hover { color: var(--accent); }
 
-        /* ページヘッダー */
         header.page-header {
             background: linear-gradient(135deg, #1B365D, #0F203C);
             color: #ffffff;
@@ -116,7 +109,6 @@
             letter-spacing: 0.08em;
         }
 
-        /* お知らせ一覧リスト */
         .news-list {
             display: flex;
             flex-direction: column;
@@ -140,10 +132,7 @@
             margin-bottom: 8px;
         }
 
-        .news-item time {
-            font-size: 0.9rem;
-            color: #718096;
-        }
+        .news-item time { font-size: 0.9rem; color: #718096; }
 
         .news-tag {
             background-color: #faf8f5;
@@ -169,12 +158,7 @@
             line-height: 1.6;
         }
 
-        /* 戻るボタン */
-        .back-home {
-            text-align: center;
-            margin-top: 40px;
-        }
-
+        .back-home { text-align: center; margin-top: 40px; }
         .btn-home {
             display: inline-block;
             background-color: var(--primary);
@@ -185,10 +169,7 @@
             font-weight: bold;
             transition: background 0.2s;
         }
-
-        .btn-home:hover {
-            background-color: #0F203C;
-        }
+        .btn-home:hover { background-color: #0F203C; }
 
         footer {
             text-align: center;
@@ -209,7 +190,6 @@
 </head>
 <body>
 
-    <!-- 上部固定ナビゲーション -->
     <nav class="site-nav">
         <div class="nav-container">
             <a href="index.html" class="nav-brand">
@@ -227,7 +207,6 @@
         </div>
     </nav>
 
-    <!-- ページヘッダー -->
     <header class="page-header">
         <h1>お知らせ一覧</h1>
     </header>
@@ -236,26 +215,8 @@
         <section class="news-container">
             <h2>最新情報・お知らせ</h2>
             
-            <div class="news-list">
-                <!-- 記事1 -->
-                <article class="news-item">
-                    <div class="news-meta">
-                        <time datetime="2026-10-01">2026.10.01</time>
-                        <span class="news-tag">お知らせ</span>
-                    </div>
-                    <div class="news-title">ホームページを開設しました！</div>
-                    <p class="news-desc">余瀬のめだか屋さん「すいすい堂」のホームページを公開いたしました。メダカの情報やイベント情報を随時更新してまいります。どうぞよろしくお願いいたします。</p>
-                </article>
-
-                <!-- 記事2 -->
-                <article class="news-item">
-                    <div class="news-meta">
-                        <time datetime="2026-10-04">2026.10.04</time>
-                        <span class="news-tag">イベント情報</span>
-                    </div>
-                    <div class="news-title">地域のイベントにめだかすくいで出店しました！</div>
-                    <p class="news-desc">大田原市黒羽の田町秋まつりに出店参加させて頂きました。来て下さった方々ありがとうございました。</p>
-                </article>
+            <div id="full-news-container" class="news-list">
+                <!-- ここに自動で全件のお知らせが挿入されます -->
             </div>
 
             <div class="back-home">
@@ -268,5 +229,26 @@
         <p>&copy; 余瀬のめだか屋さん すいすい堂 All Rights Reserved.</p>
     </footer>
 
+    <!-- お知らせデータと連動させるためのJavaScript読み込み -->
+    <script src="news.js"></script>
+    <script>
+        // お知らせページには全ての一覧を表示する
+        const fullContainer = document.getElementById('full-news-container');
+        if (fullContainer && typeof newsData !== 'undefined') {
+            newsData.forEach(item => {
+                const article = document.createElement('article');
+                article.className = 'news-item';
+                article.innerHTML = `
+                    <div class="news-meta">
+                        <time datetime="${item.date}">${item.displayDate}</time>
+                        <span class="news-tag">${item.tag}</span>
+                    </div>
+                    <div class="news-title">${item.title}</div>
+                    <p class="news-desc">${item.desc}</p>
+                `;
+                fullContainer.appendChild(article);
+            });
+        }
+    </script>
 </body>
 </html>
