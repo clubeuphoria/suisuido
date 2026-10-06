@@ -4,16 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- 検索エンジン向けのタイトル（検索結果に大きく表示されます） -->
+    <!-- 検索エンジン向けのタイトル -->
     <title>余瀬のめだか屋さん すいすい堂 | 大田原市のメダカ養殖・めだかすくい専門店</title>
     
-    <!-- 検索結果のタイトルの下に表示される説明文（概要） -->
-    <meta name="description" content="栃木県大田原市余瀬（那須愛恵苑）のメダカ養殖・めだかすくい専門店「余瀬のめだか屋さん すいすい堂」。ヒメダカ、楊貴妃、幹之、オロチなど人気の観賞用メダカを販売。地域共生と福祉を目指す温かいお店です。飼育のご相談もお気軽にどうぞ。">
+    <!-- 検索結果のタイトルの下に表示される説明文 -->
+    <meta name="description" content="栃木県大田原市余瀬（那須愛恵苑）のメダカ養殖・めだかすくい専門店「余瀬のめだか屋さん すいすい堂」。ヒメダカ、楊貴妃、幹之、オロチなど人気の観賞用メダカを販売。地域共生と福祉を目指す温かいお店です。">
     
     <!-- 検索キーワード -->
-    <meta name="keywords" content="すいすい堂, 余瀬のめだか屋さん, メダカ, スイちゃん, めだか養殖, めだかすくい, 大田原市, 余瀬, 黒羽, 那須愛恵苑, 楊貴妃, 幹之, 観賞用メダカ">
+    <meta name="keywords" content="すいすい堂, 余瀬のめだか屋さん, メダカ, めだか養殖, めだかすくい, 大田原市, 余瀬, 黒羽, 那須愛恵苑, 楊貴妃, 幹之, 観賞用メダカ">
 
-    <!-- 検索結果で勝手にページが翻訳されたり変なリンクにならないための設定 -->
     <meta name="format-detection" content="telephone=no">
 
     <style>
@@ -69,7 +68,7 @@
         .nav-links {
             list-style: none;
             display: flex;
-            gap: 20px;
+            gap: 15px;
             margin: 0;
             padding: 0;
             flex-wrap: wrap;
@@ -78,7 +77,7 @@
         .nav-links li a {
             text-decoration: none;
             color: var(--text);
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             transition: color 0.2s;
         }
 
@@ -86,7 +85,7 @@
             color: var(--accent);
         }
 
-        /* ヘッダー（2段構成・すいすい堂強調） */
+        /* ヘッダー（2段構成） */
         header.main-header {
             background: linear-gradient(135deg, #1B365D, #0F203C);
             color: #ffffff;
@@ -101,7 +100,6 @@
             letter-spacing: 0.05em;
         }
 
-        /* 1段目：余瀬のめだか屋さん */
         .header-sub-title {
             display: block;
             font-size: 1.2rem;
@@ -110,7 +108,6 @@
             margin-bottom: 5px;
         }
 
-        /* 2段目：すいすい堂（文字を大きく強調） */
         .header-main-title {
             display: block;
             font-size: 2.8rem;
@@ -174,6 +171,56 @@
             white-space: pre-line;
             color: #4a5568;
             margin-bottom: 20px;
+        }
+
+        /* トップページの新着情報リスト用スタイル */
+        .home-news-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 20px 0;
+        }
+
+        .home-news-list li {
+            display: flex;
+            gap: 15px;
+            padding: 12px 0;
+            border-bottom: 1px dashed #eae6df;
+            align-items: center;
+        }
+
+        .home-news-list time {
+            font-size: 0.9rem;
+            color: #718096;
+            white-space: nowrap;
+        }
+
+        .home-news-list a {
+            color: var(--text);
+            text-decoration: none;
+            transition: color 0.2s;
+            font-size: 0.95rem;
+        }
+
+        .home-news-list a:hover {
+            color: var(--accent);
+            text-decoration: underline;
+        }
+
+        .news-more-box {
+            text-align: right;
+            margin-top: 15px;
+        }
+
+        .news-more-btn {
+            font-size: 0.9rem;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .news-more-btn:hover {
+            color: var(--accent);
+            text-decoration: underline;
         }
 
         .vision-grid {
@@ -301,7 +348,7 @@
         }
 
         @media (max-width: 600px) {
-            .nav-links { gap: 10px; font-size: 0.85rem; }
+            .nav-links { gap: 8px; font-size: 0.8rem; }
             .header-sub-title { font-size: 1rem; }
             .header-main-title { font-size: 2.2rem; }
             section { padding: 25px 15px; }
@@ -315,21 +362,22 @@
     <!-- 上部固定のナビゲーションメニュー -->
     <nav class="site-nav">
         <div class="nav-container">
-            <a href="#" class="nav-brand">
+            <a href="index.html" class="nav-brand">
                 <span class="nav-logo-text">すいすい堂</span>
             </a>
             <ul class="nav-links">
+                <li><a href="news.html">お知らせ</a></li>
                 <li><a href="#about">お店の紹介</a></li>
                 <li><a href="#varieties">取扱品種</a></li>
                 <li><a href="#access">営業案内</a></li>
-                <li><a href="tips.html">めだかすくいのコツ</a></li>
+                <li><a href="tips.html">すくいのコツ</a></li>
                 <li><a href="care.html">飼い方・水作り</a></li>
                 <li><a href="#contact">お問い合わせ</a></li>
             </ul>
         </div>
     </nav>
 
-    <!-- ヘッダー（2段構成・すいすい堂強調） -->
+    <!-- ヘッダー -->
     <header class="main-header">
         <h1>
             <span class="header-sub-title">余瀬のめだか屋さん</span>
@@ -340,6 +388,24 @@
     </header>
 
     <main>
+        <!-- 新着情報（お知らせ）プレビューセクション -->
+        <section id="news-preview">
+            <h2>新着情報</h2>
+            <ul class="home-news-list">
+                <li>
+                    <time datetime="2026-06-01">2026.06.01</time>
+                    <a href="news.html">ホームページを開設しました！新着情報を随時更新していきます。</a>
+                </li>
+                <li>
+                    <time datetime="2026-05-15">2026.05.15</time>
+                    <a href="news.html">人気の「楊貴妃」「幹之」の販売を本格開始しました。</a>
+                </li>
+            </ul>
+            <div class="news-more-box">
+                <a href="news.html" class="news-more-btn">過去のお知らせ一覧を見る ＞</a>
+            </div>
+        </section>
+
         <!-- すいすい堂について -->
         <section id="about">
             <h2>すいすい堂について</h2>

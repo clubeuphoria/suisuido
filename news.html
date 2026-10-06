@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>お知らせ一覧 | 余瀬のめだか屋さん すいすい堂</title>
+    <meta name="description" content="余瀬のめだか屋さん すいすい堂からの最新情報や営業日のお知らせ一覧です。">
+    <meta name="format-detection" content="telephone=no">
+
+    <style>
+        :root {
+            --primary: #1B365D; /* 藍色 */
+            --accent: #C5A059;  /* 金茶 */
+            --bg: #FBF9F5;      /* 和紙風背景 */
+            --text: #2D2D2D;
+        }
+
+        body {
+            font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
+            background-color: var(--bg);
+            color: var(--text);
+            margin: 0;
+            padding: 0;
+            line-height: 1.8;
+        }
+
+        /* 上部固定ナビゲーション */
+        nav.site-nav {
+            background-color: #ffffff;
+            border-bottom: 1px solid #eae6df;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            padding: 12px 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+        }
+
+        .nav-container {
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-brand {
+            text-decoration: none;
+        }
+
+        .nav-logo-text {
+            font-weight: bold;
+            color: var(--primary);
+            font-size: 1.2rem;
+            letter-spacing: 0.05em;
+            white-space: nowrap;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 15px;
+            margin: 0;
+            padding: 0;
+            flex-wrap: wrap;
+        }
+
+        .nav-links li a {
+            text-decoration: none;
+            color: var(--text);
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+
+        .nav-links li a:hover {
+            color: var(--accent);
+        }
+
+        /* ページヘッダー */
+        header.page-header {
+            background: linear-gradient(135deg, #1B365D, #0F203C);
+            color: #ffffff;
+            text-align: center;
+            padding: 40px 20px;
+            border-bottom: 5px solid var(--accent);
+        }
+
+        header.page-header h1 {
+            margin: 0;
+            font-size: 2.2rem;
+            letter-spacing: 0.08em;
+        }
+
+        main {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        section.news-container {
+            background: #ffffff;
+            margin-bottom: 40px;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+            border: 1px solid #eae6df;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            color: var(--primary);
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 12px;
+            margin-top: 0;
+            margin-bottom: 30px;
+            text-align: center;
+            letter-spacing: 0.08em;
+        }
+
+        /* お知らせ一覧リスト */
+        .news-list {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .news-item {
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eae6df;
+        }
+
+        .news-item:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .news-meta {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+
+        .news-item time {
+            font-size: 0.9rem;
+            color: #718096;
+        }
+
+        .news-tag {
+            background-color: #faf8f5;
+            color: var(--primary);
+            border: 1px solid var(--accent);
+            font-size: 0.75rem;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+
+        .news-title {
+            font-size: 1.15rem;
+            color: var(--primary);
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .news-desc {
+            font-size: 0.95rem;
+            color: #4a5568;
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        /* 戻るボタン */
+        .back-home {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .btn-home {
+            display: inline-block;
+            background-color: var(--primary);
+            color: #ffffff;
+            text-decoration: none;
+            padding: 12px 30px;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background 0.2s;
+        }
+
+        .btn-home:hover {
+            background-color: #0F203C;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            background-color: var(--primary);
+            color: #ffffff;
+            font-size: 0.9rem;
+            margin-top: 60px;
+            letter-spacing: 0.05em;
+        }
+
+        @media (max-width: 600px) {
+            .nav-links { gap: 8px; font-size: 0.8rem; }
+            section.news-container { padding: 25px 15px; }
+            header.page-header h1 { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 上部固定ナビゲーション -->
+    <nav class="site-nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-brand">
+                <span class="nav-logo-text">すいすい堂</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="news.html" style="color: var(--accent); font-weight: bold;">お知らせ</a></li>
+                <li><a href="index.html#about">お店の紹介</a></li>
+                <li><a href="index.html#varieties">取扱品種</a></li>
+                <li><a href="index.html#access">営業案内</a></li>
+                <li><a href="tips.html">すくいのコツ</a></li>
+                <li><a href="care.html">飼い方・水作り</a></li>
+                <li><a href="index.html#contact">お問い合わせ</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- ページヘッダー -->
+    <header class="page-header">
+        <h1>お知らせ一覧</h1>
+    </header>
+
+    <main>
+        <section class="news-container">
+            <h2>最新情報・お知らせ</h2>
+            
+            <div class="news-list">
+                <!-- 記事1 -->
+                <article class="news-item">
+                    <div class="news-meta">
+                        <time datetime="2026-06-01">2026.06.01</time>
+                        <span class="news-tag">お知らせ</span>
+                    </div>
+                    <div class="news-title">ホームページを開設しました！</div>
+                    <p class="news-desc">余瀬のめだか屋さん「すいすい堂」のホームページを公開いたしました。こだわりの改良メダカの情報やイベント情報を随時更新してまいります。どうぞよろしくお願いいたします。</p>
+                </article>
+
+                <!-- 記事2 -->
+                <article class="news-item">
+                    <div class="news-meta">
+                        <time datetime="2026-05-15">2026.05.15</time>
+                        <span class="news-tag">販売情報</span>
+                    </div>
+                    <div class="news-title">人気の「楊貴妃」「幹之」の販売を本格開始しました</div>
+                    <p class="news-desc">暖かくなり、メダカたちが元気に育つ季節となりました。当事業所で大切に育てた「楊貴妃」や「幹之」などの人気品種の販売を本格的にスタートしております。見学やお問い合わせもお気軽にどうぞ！</p>
+                </article>
+            </div>
+
+            <div class="back-home">
+                <a href="index.html" class="btn-home">トップページに戻る</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 余瀬のめだか屋さん すいすい堂 All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
