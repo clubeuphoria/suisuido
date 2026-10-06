@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- 検索エンジン向けのタイトルと説明 -->
+    <title>メダカすくいのコツと持ち帰り方ガイド | すいすい堂</title>
+    <meta name="description" content="大田原市のメダカ専門店「すいすい堂」がお届けするメダカすくいのコツと持ち帰り方。網の動かし方や複数匹を狙う際の注意点、安全なお持ち帰りのポイントを分かりやすく解説します。">
+
+    <style>
+        :root {
+            --primary: #1B365D; /* 藍色 */
+            --accent: #C5A059;  /* 金茶 */
+            --bg: #FBF9F5;      /* 和紙風背景 */
+            --text: #2D2D2D;
+        }
+
+        body {
+            font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
+            background-color: var(--bg);
+            color: var(--text);
+            margin: 0;
+            padding: 0;
+            line-height: 1.8;
+            scroll-behavior: smooth;
+        }
+
+        /* 上部固定ナビゲーション */
+        nav.site-nav {
+            background-color: #ffffff;
+            border-bottom: 1px solid #eae6df;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            padding: 12px 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+        }
+
+        .nav-container {
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-brand {
+            text-decoration: none;
+        }
+
+        .nav-logo-text {
+            font-weight: bold;
+            color: var(--primary);
+            font-size: 1.4rem;
+            letter-spacing: 0.1em;
+            white-space: nowrap;
+            font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links li a {
+            text-decoration: none;
+            color: var(--text);
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+
+        .nav-links li a:hover {
+            color: var(--accent);
+        }
+
+        /* ヘッダー（サブページ用） */
+        header.sub-header {
+            background: linear-gradient(135deg, #1B365D, #0F203C);
+            color: #ffffff;
+            text-align: center;
+            padding: 50px 20px;
+            border-bottom: 5px solid var(--accent);
+        }
+
+        header.sub-header h1 {
+            font-size: 2.2rem;
+            margin: 0 0 10px 0;
+            letter-spacing: 0.1em;
+        }
+
+        header.sub-header p {
+            font-size: 1.05rem;
+            color: var(--accent);
+            margin: 0;
+            font-weight: bold;
+        }
+
+        main {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        section {
+            background: #ffffff;
+            margin-bottom: 40px;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+            border: 1px solid #eae6df;
+        }
+
+        h2 {
+            font-size: 1.6rem;
+            color: var(--primary);
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 10px;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            letter-spacing: 0.05em;
+        }
+
+        h2:first-of-type {
+            margin-top: 0;
+        }
+
+        h3.sub-heading {
+            font-size: 1.25rem;
+            color: var(--primary);
+            margin-top: 30px;
+            margin-bottom: 12px;
+            border-left: 4px solid var(--accent);
+            padding-left: 10px;
+        }
+
+        p {
+            font-size: 1.05rem;
+            color: #4a5568;
+            margin-bottom: 20px;
+        }
+
+        /* 強調ボックスやポイント */
+        .point-box {
+            background: #faf8f5;
+            padding: 20px 25px;
+            border-radius: 6px;
+            border-left: 4px solid var(--accent);
+            margin: 25px 0;
+        }
+
+        .point-box p {
+            margin: 0;
+            color: #2D2D2D;
+        }
+
+        /* 戻るボタンエリア */
+        .back-link-box {
+            text-align: center;
+            margin: 40px 0 20px 0;
+        }
+
+        .back-btn {
+            display: inline-block;
+            background-color: var(--primary);
+            color: #ffffff;
+            text-decoration: none;
+            padding: 14px 30px;
+            font-size: 1rem;
+            border-radius: 6px;
+            font-weight: bold;
+            transition: background 0.2s;
+        }
+
+        .back-btn:hover {
+            background-color: #0F203C;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            background-color: var(--primary);
+            color: #ffffff;
+            font-size: 0.9rem;
+            margin-top: 60px;
+            letter-spacing: 0.05em;
+        }
+
+        @media (max-width: 600px) {
+            .nav-links { gap: 10px; font-size: 0.85rem; }
+            header.sub-header h1 { font-size: 1.8rem; }
+            section { padding: 25px 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 上部固定のナビゲーションメニュー -->
+    <nav class="site-nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-brand">
+                <span class="nav-logo-text">すいすい堂</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html#about">お店の紹介</a></li>
+                <li><a href="index.html#varieties">取扱品種</a></li>
+                <li><a href="index.html#access">営業案内</a></li>
+                <li><a href="tips.html" style="color: var(--accent); font-weight: bold;">メダカすくいのコツ</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- ヘッダー -->
+    <header class="sub-header">
+        <h1>メダカすくいのコツと持ち帰り方</h1>
+        <p>上手なすくい方から安全なお持ち帰りまで徹底解説</p>
+    </header>
+
+    <main>
+        <section>
+            <p>“○○すくい”といえば金魚のイメージがありますが、近年はメダカをターゲットにしたメダカすくいも各地で見かけるようになりました。</p>
+            <p>体が軽いメダカは金魚よりもすくいあみですくいやすいので、コツを覚えてぜひ挑戦してみてください。</p>
+            <p>ここでは、メダカすくいのコツや持ち帰り方を解説します。</p>
+
+            <h2>メダカのすくい方</h2>
+            <p>体が小さくてすくいやすいメダカすくいは、小さなお子様からメダカ愛好家まで幅広い層に人気の今注目のイベントです。</p>
+            <p>メダカすくいのタライ中には、一般的な黒メダカやヒメダカだけでなく、カラフルな体色や光沢が楽しめる改良メダカが混ざっているイベントも多く、見ているだけでも楽しめます。</p>
+            <p>運が良ければレアな高級品種をお得にすくえるチャンスですので、コツを覚えて挑戦してみましょう。</p>
+
+            <h3 class="sub-heading">すくいあみはゆっくり動かそう</h3>
+            <p>メダカは金魚よりも泳ぎが素早いので、逃げられてしまうと追うのが難しいです。</p>
+            <p>そのためすくいあみを動かすときは、怖がらせないようにゆっくりとメダカの泳ぎに合わせて動かしましょう。</p>
+            <p>斜め45度程度の角度で水に全体を浸した後、水面と平行になるように角度を変えて、メダカが来るのを静かに待ちます。</p>
+            <p>水中で動かすときは、平行を保ったまま横にゆっくりスライドするイメージで動かすとよいです。</p>
+
+            <h3 class="sub-heading">メダカはすくいあみの真ん中に乗せてすくいあげよう</h3>
+            <p>金魚すくいではすくいあみの端に寄せてすくい上げるのがコツと言われていますが、ヒレが短く小さいメダカすくいでは、真ん中に乗せることが成功のコツです。</p>
+            <p>それよりも、臆病なメダカに気づかれないよう、静かにすくい上げることが重要です。</p>
+            <p>メダカをすくい上げるときは、まず、水中に沈めたすくいあみの上にメダカが来るのを待ちます。メダカを追いかけるとスピードを上げて逃げてしまうので、すくいあみはできる限り動かないように注意しましょう。</p>
+            <p>すくいあみの真ん中あたりにメダカが来たら、気づかれないようにそっと上に持ち上げます。</p>
+            <p>この時、すくいあみの角度はできるだけ変えずに平行を保ったまま水面にあげるのがコツです。</p>
+
+            <div class="point-box">
+                <p>メダカをすくうことが出来たら、素早くカップに移しましょう。<br>
+                メダカは金魚と違って、品種による体長差や体格差がほとんどありません。そのためコツさえつかめれば、比較的楽にいろいろなメダカをすくうことができるという醍醐味があります。</p>
+            </div>
+
+            <h3 class="sub-heading">複数匹を1度に狙うのはNG</h3>
+            <p>メダカは小さな魚ですが、同時に1匹以上を狙うのはおすすめしません。</p>
+            <p>2匹同時にすくうとすくいあみに負担がかかりますし、すくうのに失敗するとメダカが警戒して近づいてこなくなってしまいます。</p>
+            <p>メダカは動きも早いので、焦らずに1匹ずつ確実に狙っていきましょう。</p>
+
+            <h2>メダカをすくったら！メダカの持ち帰り方</h2>
+            <p>すくったメダカはできるだけ早く家に持ち帰りましょう。メダカは丈夫な魚ですが、長時間狭い袋の中に入れていると帰宅途中で弱ってしまうことがあります。</p>
+            <p>特に猛暑日は袋の中の水温が上昇して消耗しやすいので、できるだけ直射日光が当たらないように注意しながら帰宅してください。</p>
+
+            <div class="back-link-box">
+                <a href="index.html" class="back-btn">トップページに戻る</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; すいすい堂 All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
