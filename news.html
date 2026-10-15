@@ -24,17 +24,19 @@
             line-height: 1.8;
         }
 
-        /* 共通ナビゲーションのスタイル */
-        nav.site-nav {
-            background-color: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(5px);
-            border-bottom: 1px solid #eae6df;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            padding: 12px 20px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.03);
-        }
+        /* 上部固定ナビゲーション（確実に固定させるための指定） */
+nav.site-nav {
+    background-color: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(5px);
+    border-bottom: 1px solid #eae6df;
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 9999 !important;
+    padding: 12px 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    width: 100%;
+    box-sizing: border-box;
+}
         .nav-container { max-width: 900px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
         .nav-brand { text-decoration: none; }
         .nav-logo-text { font-weight: bold; color: var(--primary); font-size: 1.2rem; letter-spacing: 0.05em; white-space: nowrap; }
