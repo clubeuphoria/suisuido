@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>メダカの飼い方・水の作り方ガイド | すいすい堂</title>
-    <meta name="description" content="大田原市のメダカ専門店「すいすい堂」による、メダカに優しい水の作り方や分かりやすい飼い方ガイド。初心者の方も安心してメダカライフを楽しめます。">
+    <title>飼い方・水作りガイド | 余瀬のめだか屋さん すいすい堂</title>
+    <meta name="description" content="栃木県大田原市余瀬のメダカ専門店「すいすい堂」。初心者でも安心なメダカの飼育方法や、大切な水作りのコツを分かりやすく解説します。">
+    <meta name="format-detection" content="telephone=no">
 
     <style>
         :root {
@@ -21,12 +22,12 @@
             margin: 0;
             padding: 0;
             line-height: 1.8;
-            scroll-behavior: smooth;
         }
 
-        /* 上部固定ナビゲーション */
+        /* 共通ナビゲーションのスタイル */
         nav.site-nav {
-            background-color: #ffffff;
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(5px);
             border-bottom: 1px solid #eae6df;
             position: sticky;
             top: 0;
@@ -34,76 +35,25 @@
             padding: 12px 20px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.03);
         }
+        .nav-container { max-width: 900px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+        .nav-brand { text-decoration: none; }
+        .nav-logo-text { font-weight: bold; color: var(--primary); font-size: 1.2rem; letter-spacing: 0.05em; white-space: nowrap; }
+        .nav-links { list-style: none; display: flex; gap: 15px; margin: 0; padding: 0; flex-wrap: wrap; }
+        .nav-links li a { text-decoration: none; color: var(--text); font-size: 0.9rem; transition: color 0.2s; }
+        .nav-links li a:hover { color: var(--accent); }
 
-        .nav-container {
-            max-width: 900px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .nav-brand {
-            text-decoration: none;
-        }
-
-        .nav-logo-text {
-            font-weight: bold;
-            color: var(--primary);
-            font-size: 1.4rem;
-            letter-spacing: 0.1em;
-            white-space: nowrap;
-        }
-
-        .nav-links {
-            list-style: none;
-            display: flex;
-            gap: 15px;
-            margin: 0;
-            padding: 0;
-            flex-wrap: wrap;
-        }
-
-        .nav-links li a {
-            text-decoration: none;
-            color: var(--text);
-            font-size: 0.9rem;
-            transition: color 0.2s;
-        }
-
-        .nav-links li a:hover {
-            color: var(--accent);
-        }
-
-        /* ヘッダー */
-        header.sub-header {
+        /* ページヘッダー */
+        header.page-header {
             background: linear-gradient(135deg, #1B365D, #0F203C);
             color: #ffffff;
             text-align: center;
-            padding: 50px 20px;
+            padding: 40px 20px;
             border-bottom: 5px solid var(--accent);
         }
+        header.page-header h1 { margin: 0; font-size: 2.2rem; letter-spacing: 0.08em; }
 
-        header.sub-header h1 {
-            font-size: 2.2rem;
-            margin: 0 0 10px 0;
-            letter-spacing: 0.1em;
-        }
-
-        header.sub-header p {
-            font-size: 1.05rem;
-            color: var(--accent);
-            margin: 0;
-            font-weight: bold;
-        }
-
-        main {
-            max-width: 900px;
-            margin: 40px auto;
-            padding: 0 20px;
-        }
-
-        section {
+        main { max-width: 900px; margin: 40px auto; padding: 0 20px; }
+        section.content-container {
             background: #ffffff;
             margin-bottom: 40px;
             padding: 40px;
@@ -111,204 +61,131 @@
             box-shadow: 0 4px 15px rgba(0,0,0,0.04);
             border: 1px solid #eae6df;
         }
-
         h2 {
-            font-size: 1.6rem;
+            font-size: 1.8rem;
             color: var(--primary);
             border-bottom: 2px solid var(--accent);
-            padding-bottom: 10px;
+            padding-bottom: 12px;
             margin-top: 0;
             margin-bottom: 25px;
-            letter-spacing: 0.05em;
-        }
-
-        /* 画像を綺麗に表示するスタイル */
-        .image-container {
             text-align: center;
-            margin: 20px 0 30px 0;
+            letter-spacing: 0.08em;
         }
-
-        .image-container img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 8px;
-            border: 1px solid #eae6df;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        h3.sub-heading {
+            font-size: 1.3rem;
+            color: var(--primary);
+            margin-top: 35px;
+            margin-bottom: 15px;
+            border-left: 4px solid var(--accent);
+            padding-left: 10px;
         }
+        p { color: #4a5568; margin-bottom: 20px; font-size: 1.05rem; }
 
-        p {
-            font-size: 1.05rem;
-            color: #4a5568;
+        .care-box {
+            background: #faf8f5;
+            padding: 20px;
+            border-radius: 6px;
+            border-left: 4px solid var(--accent);
             margin-bottom: 20px;
         }
+        .care-box h4 { margin-top: 0; color: var(--primary); font-size: 1.1rem; margin-bottom: 8px; }
+        .care-box p { margin: 0; font-size: 0.95rem; color: #555; }
 
-        .back-link-box {
-            text-align: center;
-            margin: 40px 0 20px 0;
-        }
-
-        .back-btn {
+        .back-home { text-align: center; margin-top: 40px; }
+        .btn-home {
             display: inline-block;
             background-color: var(--primary);
             color: #ffffff;
             text-decoration: none;
-            padding: 14px 30px;
-            font-size: 1rem;
-            border-radius: 6px;
+            padding: 12px 30px;
+            border-radius: 5px;
             font-weight: bold;
             transition: background 0.2s;
         }
+        .btn-home:hover { background-color: #0F203C; }
 
-        .back-btn:hover {
-            background-color: #0F203C;
+        /* 右下スイちゃんのスタイル */
+        .floating-character {
+            position: fixed; bottom: 20px; right: 20px; z-index: 999;
+            text-align: center; cursor: pointer; text-decoration: none;
+            transition: transform 0.2s ease-in-out;
         }
+        .floating-character:hover { transform: translateY(-5px) scale(1.05); }
+        .char-bubble {
+            background-color: #ffffff; color: #1B365D; font-size: 0.8rem; font-weight: bold;
+            padding: 5px 10px; border-radius: 15px; border: 2px solid #C5A059;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.12); margin-bottom: 6px; white-space: nowrap; position: relative;
+        }
+        .char-bubble::after {
+            content: ""; position: absolute; bottom: -7px; left: 50%; transform: translateX(-50%);
+            border-width: 7px 6px 0 6px; border-style: solid; border-color: #C5A059 transparent transparent transparent;
+        }
+        .char-img-wrap {
+            width: 85px; height: 85px; border-radius: 50%; border: 3px solid #C5A059;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.18); overflow: hidden; background-color: #ffffff; margin: 0 auto;
+        }
+        .char-img-wrap img { width: 100%; height: 100%; object-fit: cover; }
 
+        /* フッター */
         footer {
-            text-align: center;
-            padding: 30px;
-            background-color: var(--primary);
-            color: #ffffff;
-            font-size: 0.9rem;
-            margin-top: 60px;
-            letter-spacing: 0.05em;
+            text-align: center; padding: 30px; background-color: var(--primary);
+            color: #ffffff; font-size: 0.9rem; margin-top: 60px; letter-spacing: 0.05em;
         }
 
         @media (max-width: 600px) {
-            .nav-links { gap: 10px; font-size: 0.8rem; }
-            header.sub-header h1 { font-size: 1.6rem; }
-            section { padding: 25px 15px; }
+            .nav-links { gap: 8px; font-size: 0.8rem; }
+            section.content-container { padding: 25px 15px; }
+            header.page-header h1 { font-size: 1.8rem; }
+            .floating-character { bottom: 15px; right: 15px; }
+            .char-img-wrap { width: 65px; height: 65px; }
+            .char-bubble { font-size: 0.7rem; padding: 3px 8px; }
         }
-        /* ------------------------------------------
-   画面右下ひょっこり固定スイちゃんCSS
------------------------------------------- */
-.floating-character {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    z-index: 999;
-    text-align: center;
-    cursor: pointer;
-    transition: transform 0.2s ease-in-out;
-    text-decoration: none;
-}
-
-.floating-character:hover {
-    transform: translateY(-5px) scale(1.05);
-}
-
-.char-bubble {
-    background-color: #ffffff;
-    color: #1B365D;
-    font-size: 0.8rem;
-    font-weight: bold;
-    padding: 5px 10px;
-    border-radius: 15px;
-    border: 2px solid #C5A059;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.12);
-    margin-bottom: 6px;
-    white-space: nowrap;
-    position: relative;
-}
-
-/* 吹き出しの三角部分 */
-.char-bubble::after {
-    content: "";
-    position: absolute;
-    bottom: -7px;
-    left: 50%;
-    transform: translateX(-50%);
-    border-width: 7px 6px 0 6px;
-    border-style: solid;
-    border-color: #C5A059 transparent transparent transparent;
-}
-
-.char-img-wrap {
-    width: 85px;
-    height: 85px;
-    border-radius: 50%;
-    border: 3px solid #C5A059;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.18);
-    overflow: hidden;
-    background-color: #ffffff;
-    margin: 0 auto;
-}
-
-.char-img-wrap img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-/* スマホ用のサイズ調整 */
-@media (max-width: 600px) {
-    .floating-character { bottom: 15px; right: 15px; }
-    .char-img-wrap { width: 65px; height: 65px; }
-    .char-bubble { font-size: 0.7rem; padding: 3px 8px; }
-}
     </style>
 </head>
 <body>
 
-    <!-- 上部固定のナビゲーションメニュー -->
-    <nav class="site-nav">
-        <div class="nav-container">
-            <a href="index.html" class="nav-brand">
-                <span class="nav-logo-text">すいすい堂</span>
-            </a>
-            <ul class="nav-links">
-                <li><a href="index.html#about">お店の紹介</a></li>
-                <li><a href="index.html#varieties">取扱品種</a></li>
-                <li><a href="index.html#access">営業案内</a></li>
-                <li><a href="tips.html">めだかすくいのコツ</a></li>
-                <li><a href="care.html" style="color: var(--accent); font-weight: bold;">飼い方・水作り</a></li>
-                <li><a href="index.html#contact">お問い合わせ</a></li>
-            </ul>
-        </div>
-    </nav>
+    <!-- 自動ナビゲーション挿入位置 -->
+    <div id="site-nav-placeholder"></div>
 
-    <!-- ヘッダー -->
-    <header class="sub-header">
-        <h1>メダカの飼い方・水の作り方</h1>
-        <p>スイちゃんと一緒に楽しくメダカを育てよう！</p>
+    <header class="page-header">
+        <h1>飼い方・水作りガイド</h1>
     </header>
 
     <main>
-        <!-- 水の作り方セクション -->
-        <section>
-            <h2>メダカに使う「水の作り方」</h2>
-            <p>水道水をペットボトルに入れて外に置いて3日ほどおくだけ！メダカにやさしい水の作り方を詳しく解説しています。</p>
-            
-            <div class="image-container">
-                <!-- ※画像ファイル名が異なる場合は src="実際のファイル名.jpg" に書き換えてください -->
-                <img src="water_guide.jpg" alt="メダカに使う水の作り方ガイド">
-            </div>
-        </section>
+        <section class="content-container">
+            <h2>メダカを元気に育てる基本のステップ</h2>
+            <p>メダカ飼育で一番大切なのは「水」です。初めての方でも分かりやすい、水作りと日々の管理のコツをご紹介します。</p>
 
-        <!-- メダカの飼い方セクション -->
-        <section>
-            <h2>メダカの「飼い方ガイド」</h2>
-            <p>容器の選び方、置き場所、水換えや季節ごとの管理のポイントなど、やさしく・かんたん・楽しく育てるためのコツが詰まっています。</p>
-            
-            <div class="image-container">
-                <img src="care_guide.jpg" alt="メダカの飼い方ガイド">
+            <h3 class="sub-heading">1. カルキ抜き（塩素抜き）をしっかり行う</h3>
+            <div class="care-box">
+                <h4>水道水はそのまま使わない</h4>
+                <p>水道水に含まれるカルキ（塩素）はメダカにとって刺激が強すぎます。市販のカルキ抜き剤を使うか、バケツなどに汲み置きした水を日光に2〜3日当ててから使いましょう。</p>
             </div>
 
-            <div class="back-link-box">
-                <a href="index.html" class="back-btn">トップページに戻る</a>
+            <h3 class="sub-heading">2. エサやりは「1日数回、数分で食べ切れる量」</h3>
+            <div class="care-box">
+                <h4>与えすぎに注意！</h4>
+                <p>メダカは食べ残したエサが水底にたまると、水が汚れて病気や水質悪化の原因になります。1〜2分程度で食べきれる量を、1日1〜2回に分けて与えてください。</p>
+            </div>
+
+            <h3 class="sub-heading">3. 水替えのコツ</h3>
+            <div class="care-box">
+                <h4>一度に全部の水を換えない</h4>
+                <p>水が汚れてきたからといって、容器の水をすべて新しい水道水に替えてしまうと、メダカがショックを受けてしまいます。水替えは全体の3分の1〜半分程度を、古水園に残しながら定期的に行いましょう。</p>
+            </div>
+
+            <div class="back-home">
+                <a href="index.html" class="btn-home">トップページに戻る</a>
             </div>
         </section>
     </main>
-<!-- 画面右下にひょっこり表示されるスイちゃんアイコン -->
-<a href="#contact" class="floating-character" title="お問い合わせへ">
-    <div class="char-bubble">いらっしゃい！🐟</div>
-    <div class="char-img-wrap">
-        <!-- 画像ファイル（sui_icon.png）を同じフォルダ内に置いてください -->
-        <img src="sui_icon.png" alt="スイちゃん">
-    </div>
-</a>
-    <footer>
-        <p>&copy; すいすい堂 All Rights Reserved.</p>
-    </footer>
 
+    <!-- 自動スイちゃん挿入位置 -->
+    <div id="floating-character-placeholder"></div>
+
+    <!-- 自動フッター挿入位置 -->
+    <div id="site-footer-placeholder"></div>
+
+    <script src="common.js"></script>
 </body>
 </html>
