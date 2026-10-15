@@ -24,8 +24,10 @@
             line-height: 1.8;
         }
 
+        /* 共通ナビゲーションのスタイル */
         nav.site-nav {
-            background-color: #ffffff;
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(5px);
             border-bottom: 1px solid #eae6df;
             position: sticky;
             top: 0;
@@ -33,42 +35,14 @@
             padding: 12px 20px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.03);
         }
-
-        .nav-container {
-            max-width: 900px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
+        .nav-container { max-width: 900px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
         .nav-brand { text-decoration: none; }
-        .nav-logo-text {
-            font-weight: bold;
-            color: var(--primary);
-            font-size: 1.2rem;
-            letter-spacing: 0.05em;
-            white-space: nowrap;
-        }
-
-        .nav-links {
-            list-style: none;
-            display: flex;
-            gap: 15px;
-            margin: 0;
-            padding: 0;
-            flex-wrap: wrap;
-        }
-
-        .nav-links li a {
-            text-decoration: none;
-            color: var(--text);
-            font-size: 0.9rem;
-            transition: color 0.2s;
-        }
-
+        .nav-logo-text { font-weight: bold; color: var(--primary); font-size: 1.2rem; letter-spacing: 0.05em; white-space: nowrap; }
+        .nav-links { list-style: none; display: flex; gap: 15px; margin: 0; padding: 0; flex-wrap: wrap; }
+        .nav-links li a { text-decoration: none; color: var(--text); font-size: 0.9rem; transition: color 0.2s; }
         .nav-links li a:hover { color: var(--accent); }
 
+        /* ページ固有のスタイル（お知らせ一覧用） */
         header.page-header {
             background: linear-gradient(135deg, #1B365D, #0F203C);
             color: #ffffff;
@@ -76,19 +50,9 @@
             padding: 40px 20px;
             border-bottom: 5px solid var(--accent);
         }
+        header.page-header h1 { margin: 0; font-size: 2.2rem; letter-spacing: 0.08em; }
 
-        header.page-header h1 {
-            margin: 0;
-            font-size: 2.2rem;
-            letter-spacing: 0.08em;
-        }
-
-        main {
-            max-width: 900px;
-            margin: 40px auto;
-            padding: 0 20px;
-        }
-
+        main { max-width: 900px; margin: 40px auto; padding: 0 20px; }
         section.news-container {
             background: #ffffff;
             margin-bottom: 40px;
@@ -97,7 +61,6 @@
             box-shadow: 0 4px 15px rgba(0,0,0,0.04);
             border: 1px solid #eae6df;
         }
-
         h2 {
             font-size: 1.8rem;
             color: var(--primary);
@@ -109,31 +72,11 @@
             letter-spacing: 0.08em;
         }
 
-        .news-list {
-            display: flex;
-            flex-direction: column;
-            gap: 25px;
-        }
-
-        .news-item {
-            padding-bottom: 20px;
-            border-bottom: 1px solid #eae6df;
-        }
-
-        .news-item:last-child {
-            border-bottom: none;
-            padding-bottom: 0;
-        }
-
-        .news-meta {
-            display: flex;
-            gap: 15px;
-            align-items: center;
-            margin-bottom: 8px;
-        }
-
+        .news-list { display: flex; flex-direction: column; gap: 25px; }
+        .news-item { padding-bottom: 20px; border-bottom: 1px solid #eae6df; }
+        .news-item:last-child { border-bottom: none; padding-bottom: 0; }
+        .news-meta { display: flex; gap: 15px; align-items: center; margin-bottom: 8px; }
         .news-item time { font-size: 0.9rem; color: #718096; }
-
         .news-tag {
             background-color: #faf8f5;
             color: var(--primary);
@@ -143,170 +86,84 @@
             border-radius: 4px;
             font-weight: bold;
         }
+        .news-title { font-size: 1.15rem; color: var(--primary); font-weight: bold; margin-bottom: 8px; }
+        .news-desc { font-size: 0.95rem; color: #4a5568; margin: 0; line-height: 1.6; }
 
-        .news-title {
-            font-size: 1.15rem;
-            color: var(--primary);
-            font-weight: bold;
-            margin-bottom: 8px;
+        /* 右下スイちゃんのスタイル */
+        .floating-character {
+            position: fixed; bottom: 20px; right: 20px; z-index: 999;
+            text-align: center; cursor: pointer; text-decoration: none;
+            transition: transform 0.2s ease-in-out;
         }
-
-        .news-desc {
-            font-size: 0.95rem;
-            color: #4a5568;
-            margin: 0;
-            line-height: 1.6;
+        .floating-character:hover { transform: translateY(-5px) scale(1.05); }
+        .char-bubble {
+            background-color: #ffffff; color: #1B365D; font-size: 0.8rem; font-weight: bold;
+            padding: 5px 10px; border-radius: 15px; border: 2px solid #C5A059;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.12); margin-bottom: 6px; white-space: nowrap; position: relative;
         }
-
-        .back-home { text-align: center; margin-top: 40px; }
-        .btn-home {
-            display: inline-block;
-            background-color: var(--primary);
-            color: #ffffff;
-            text-decoration: none;
-            padding: 12px 30px;
-            border-radius: 5px;
-            font-weight: bold;
-            transition: background 0.2s;
+        .char-bubble::after {
+            content: ""; position: absolute; bottom: -7px; left: 50%; transform: translateX(-50%);
+            border-width: 7px 6px 0 6px; border-style: solid; border-color: #C5A059 transparent transparent transparent;
         }
-        .btn-home:hover { background-color: #0F203C; }
+        .char-img-wrap {
+            width: 85px; height: 85px; border-radius: 50%; border: 3px solid #C5A059;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.18); overflow: hidden; background-color: #ffffff; margin: 0 auto;
+        }
+        .char-img-wrap img { width: 100%; height: 100%; object-fit: cover; }
 
+        /* 共通フッターのスタイル */
         footer {
-            text-align: center;
-            padding: 30px;
-            background-color: var(--primary);
-            color: #ffffff;
-            font-size: 0.9rem;
-            margin-top: 60px;
-            letter-spacing: 0.05em;
+            text-align: center; padding: 30px; background-color: var(--primary);
+            color: #ffffff; font-size: 0.9rem; margin-top: 60px; letter-spacing: 0.05em;
         }
 
         @media (max-width: 600px) {
             .nav-links { gap: 8px; font-size: 0.8rem; }
             section.news-container { padding: 25px 15px; }
             header.page-header h1 { font-size: 1.8rem; }
+            .floating-character { bottom: 15px; right: 15px; }
+            .char-img-wrap { width: 65px; height: 65px; }
+            .char-bubble { font-size: 0.7rem; padding: 3px 8px; }
         }
-        /* ------------------------------------------
-   画面右下ひょっこり固定スイちゃんCSS
------------------------------------------- */
-.floating-character {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    z-index: 999;
-    text-align: center;
-    cursor: pointer;
-    transition: transform 0.2s ease-in-out;
-    text-decoration: none;
-}
-
-.floating-character:hover {
-    transform: translateY(-5px) scale(1.05);
-}
-
-.char-bubble {
-    background-color: #ffffff;
-    color: #1B365D;
-    font-size: 0.8rem;
-    font-weight: bold;
-    padding: 5px 10px;
-    border-radius: 15px;
-    border: 2px solid #C5A059;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.12);
-    margin-bottom: 6px;
-    white-space: nowrap;
-    position: relative;
-}
-
-/* 吹き出しの三角部分 */
-.char-bubble::after {
-    content: "";
-    position: absolute;
-    bottom: -7px;
-    left: 50%;
-    transform: translateX(-50%);
-    border-width: 7px 6px 0 6px;
-    border-style: solid;
-    border-color: #C5A059 transparent transparent transparent;
-}
-
-.char-img-wrap {
-    width: 85px;
-    height: 85px;
-    border-radius: 50%;
-    border: 3px solid #C5A059;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.18);
-    overflow: hidden;
-    background-color: #ffffff;
-    margin: 0 auto;
-}
-
-.char-img-wrap img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-/* スマホ用のサイズ調整 */
-@media (max-width: 600px) {
-    .floating-character { bottom: 15px; right: 15px; }
-    .char-img-wrap { width: 65px; height: 65px; }
-    .char-bubble { font-size: 0.7rem; padding: 3px 8px; }
-}
     </style>
 </head>
 <body>
 
-    <nav class="site-nav">
-        <div class="nav-container">
-            <a href="index.html" class="nav-brand">
-                <span class="nav-logo-text">すいすい堂</span>
-            </a>
-            <ul class="nav-links">
-                <li><a href="news.html" style="color: var(--accent); font-weight: bold;">お知らせ</a></li>
-                <li><a href="index.html#about">お店の紹介</a></li>
-                <li><a href="index.html#varieties">取扱品種</a></li>
-                <li><a href="index.html#access">営業案内</a></li>
-                <li><a href="tips.html">めだかすくいのコツ</a></li>
-                <li><a href="care.html">飼い方・水作り</a></li>
-                <li><a href="index.html#contact">お問い合わせ</a></li>
-            </ul>
-        </div>
-    </nav>
+    <!-- ==================================================== -->
+    <!-- ① 上部メニューの目印（ここに common.js から自動で入ります） -->
+    <!-- ==================================================== -->
+    <div id="site-nav-placeholder"></div>
 
+    <!-- ページ固有のヘッダー -->
     <header class="page-header">
         <h1>お知らせ一覧</h1>
     </header>
 
+    <!-- メインコンテンツ -->
     <main>
         <section class="news-container">
             <h2>最新情報・お知らせ</h2>
             
-            <div id="full-news-container" class="news-list">
-                <!-- ここに自動で全件のお知らせが挿入されます -->
-            </div>
-
-            <div class="back-home">
-                <a href="index.html" class="btn-home">トップページに戻る</a>
-            </div>
+            <!-- news.js から全件のお知らせが自動で差し込まれる場所 -->
+            <div id="full-news-container" class="news-list"></div>
         </section>
     </main>
-<!-- 画面右下にひょっこり表示されるスイちゃんアイコン -->
-<a href="#contact" class="floating-character" title="お問い合わせへ">
-    <div class="char-bubble">いらっしゃい！🐟</div>
-    <div class="char-img-wrap">
-        <!-- 画像ファイル（sui_icon.png）を同じフォルダ内に置いてください -->
-        <img src="sui_icon.png" alt="スイちゃん">
-    </div>
-</a>
-    <footer>
-        <p>&copy; 余瀬のめだか屋さん すいすい堂 All Rights Reserved.</p>
-    </footer>
 
-    <!-- お知らせデータと連動させるためのJavaScript読み込み -->
+    <!-- ==================================================== -->
+    <!-- ② 右下スイちゃんの目印（ここに common.js から自動で入ります） -->
+    <!-- ==================================================== -->
+    <div id="floating-character-placeholder"></div>
+
+    <!-- ==================================================== -->
+    <!-- ③ フッターの目印（ここに common.js から自動で入ります） -->
+    <!-- ==================================================== -->
+    <div id="site-footer-placeholder"></div>
+
+    <!-- 外部スクリプトの読み込み -->
     <script src="news.js"></script>
+    <script src="common.js"></script>
     <script>
-        // お知らせページには全ての一覧を表示する
+        // お知らせページ固有の自動一覧作成処理
         const fullContainer = document.getElementById('full-news-container');
         if (fullContainer && typeof newsData !== 'undefined') {
             newsData.forEach(item => {
