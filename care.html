@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>飼い方・水作りガイド | 余瀬のめだか屋さん すいすい堂</title>
-    <meta name="description" content="栃木県大田原市余瀬のメダカ専門店「すいすい堂」。初心者でも安心なメダカの飼育方法や、大切な水作りのコツを分かりやすく解説します。">
+    <meta name="description" content="栃木県大田原市余瀬のメダカ専門店「すいすい堂」。初心者でも安心なメダカの飼育方法や、大切な水作りのコツを分かりやすく解説！">
     <meta name="format-detection" content="telephone=no">
 
     <style>
@@ -14,26 +14,30 @@
             --bg: #FBF9F5;      /* 和紙風背景 */
             --text: #2D2D2D;
         }
-body {
+
+        body {
             font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
             background-color: var(--bg);
             color: var(--text);
             margin: 0;
             padding: 0;
             line-height: 1.8;
-            padding-top: 60px; /* ← 【重要】固定メニューに下のコンテンツが隠れないように上の隙間を空けます */
+            padding-top: 65px; /* 固定メニューに隠れないための余白 */
+            scroll-behavior: smooth;
         }
 
-        /* 上部固定ナビゲーション（絶対に固定させる設定） */
+        /* ------------------------------------------
+           画面上部に確実に固定されるナビゲーション
+        ------------------------------------------ */
         nav.site-nav {
             background-color: rgba(255, 255, 255, 0.98);
             backdrop-filter: blur(5px);
             border-bottom: 1px solid #eae6df;
-            position: fixed !important; /* 絶対固定にする */
-            top: 0 !important;          /* 画面の一番上 */
+            position: fixed !important;
+            top: 0 !important;
             left: 0 !important;
-            width: 100% !important;     /* 画面の端から端まで広げる */
-            z-index: 9999 !important;   /* 一番手前に表示 */
+            width: 100% !important;
+            z-index: 9999 !important;
             padding: 12px 20px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.05);
             box-sizing: border-box;
@@ -47,17 +51,72 @@ body {
             align-items: center;
         }
 
-        /* ページヘッダー */
+        .nav-brand { text-decoration: none; }
+        .nav-logo-text {
+            font-weight: bold;
+            color: var(--primary);
+            font-size: 1.2rem;
+            letter-spacing: 0.05em;
+            white-space: nowrap;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 15px;
+            margin: 0;
+            padding: 0;
+            flex-wrap: wrap;
+        }
+
+        .nav-links li a {
+            text-decoration: none;
+            color: var(--text);
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+
+        .nav-links li a:hover { color: var(--accent); }
+
+        /* 和風背景のヘッダー */
         header.page-header {
-            background: linear-gradient(135deg, #1B365D, #0F203C);
+            position: relative;
+            background-image: url('bg_medaka.jpg');
+            background-size: cover;
+            background-position: center;
             color: #ffffff;
             text-align: center;
-            padding: 40px 20px;
+            padding: 60px 20px;
             border-bottom: 5px solid var(--accent);
+            overflow: hidden;
         }
-        header.page-header h1 { margin: 0; font-size: 2.2rem; letter-spacing: 0.08em; }
 
-        main { max-width: 900px; margin: 40px auto; padding: 0 20px; }
+        header.page-header::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(135deg, rgba(27, 54, 93, 0.85), rgba(15, 32, 60, 0.9));
+            z-index: 1;
+        }
+
+        header.page-header > * {
+            position: relative;
+            z-index: 2;
+        }
+
+        header.page-header h1 {
+            margin: 0;
+            font-size: 2.2rem;
+            letter-spacing: 0.08em;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        main {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
         section.content-container {
             background: #ffffff;
             margin-bottom: 40px;
@@ -66,6 +125,7 @@ body {
             box-shadow: 0 4px 15px rgba(0,0,0,0.04);
             border: 1px solid #eae6df;
         }
+
         h2 {
             font-size: 1.8rem;
             color: var(--primary);
@@ -76,6 +136,7 @@ body {
             text-align: center;
             letter-spacing: 0.08em;
         }
+
         h3.sub-heading {
             font-size: 1.3rem;
             color: var(--primary);
@@ -84,6 +145,7 @@ body {
             border-left: 4px solid var(--accent);
             padding-left: 10px;
         }
+
         p { color: #4a5568; margin-bottom: 20px; font-size: 1.05rem; }
 
         /* ガイド用画像スタイル */
@@ -122,7 +184,7 @@ body {
         }
         .btn-home:hover { background-color: #0F203C; }
 
-        /* 右下スイちゃんのスタイル */
+        /* スイちゃんCSS */
         .floating-character {
             position: fixed; bottom: 20px; right: 20px; z-index: 999;
             text-align: center; cursor: pointer; text-decoration: none;
@@ -144,7 +206,6 @@ body {
         }
         .char-img-wrap img { width: 100%; height: 100%; object-fit: cover; }
 
-        /* フッター */
         footer {
             text-align: center; padding: 30px; background-color: var(--primary);
             color: #ffffff; font-size: 0.9rem; margin-top: 60px; letter-spacing: 0.05em;
@@ -162,7 +223,7 @@ body {
 </head>
 <body>
 
-    <!-- 自動ナビゲーション挿入位置 -->
+    <!-- ▼ 自動ナビゲーション（ここに固定メニューが挿入されます） -->
     <div id="site-nav-placeholder"></div>
 
     <header class="page-header">
@@ -172,32 +233,32 @@ body {
     <main>
         <section class="content-container">
             <h2>メダカを元気に育てる基本のステップ</h2>
-            <p>メダカ飼育で一番大切なのは「水」です。初めての方でも分かりやすい、水作りと日々の管理のコツをご紹介します。</p>
+            <p>メダカ飼育で一番大切なのは「水」です。初心者でも分かりやすい水作りと日々の管理のコツをご紹介します。</p>
 
-            <!-- 水作りの解説と画像 (water_guide.jpg) -->
+            <!-- 水作りの解説と画像 -->
             <h3 class="sub-heading">1. カルキ抜きと正しい水作り</h3>
             <div class="guide-image-box">
                 <img src="water_guide.jpg" alt="水作りガイド">
             </div>
             <div class="care-box">
                 <h4>水道水はそのまま使わない</h4>
-                <p>水道水に含まれるカルキ（塩素）はメダカにとって刺激が強すぎます。市販のカルキ抜き剤を使うか、バケツなどに汲み置きした水を日光に2〜3日当ててから使いましょう。</p>
+                <p>水道水に含まれる塩素は刺激が強すぎます。カルキ抜き剤を使うか、汲み置きした水を日光に2〜3日当ててから使いましょう。</p>
             </div>
 
-            <!-- 飼い方の解説と画像 (care_guide.jpg) -->
+            <!-- 飼い方の解説と画像 -->
             <h3 class="sub-heading">2. 日々の飼育とエサやりのコツ</h3>
             <div class="guide-image-box">
                 <img src="care_guide.jpg" alt="飼い方ガイド">
             </div>
             <div class="care-box">
                 <h4>与えすぎに注意！</h4>
-                <p>メダカは食べ残したエサが水底にたまると、水が汚れて病気や水質悪化の原因になります。1〜2分程度で食べきれる量を、1日1〜2回に分けて与えてください。</p>
+                <p>食べ残したエサは水質悪化の原因になります。1〜2分で食べきれる量を、1日1〜2回に分けて与えてください。</p>
             </div>
 
             <h3 class="sub-heading">3. 水替えのコツ</h3>
             <div class="care-box">
                 <h4>一度に全部の水を換えない</h4>
-                <p>水が汚れてきたからといって、容器の水をすべて新しい水道水に替えてしまうと、メダカがショックを受けてしまいます。水替えは全体の3分の1〜半分程度を、古水を残しながら定期的に行いましょう。</p>
+                <p>水替えは全体の3分の1〜半分程度を、古い水を少し残しながら定期的に行うのが長生きの秘訣です。</p>
             </div>
 
             <div class="back-home">
@@ -206,10 +267,10 @@ body {
         </section>
     </main>
 
-    <!-- 自動スイちゃん挿入位置 -->
+    <!-- ▼ 自動スイちゃん挿入位置 -->
     <div id="floating-character-placeholder"></div>
 
-    <!-- 自動フッター挿入位置 -->
+    <!-- ▼ 自動フッター挿入位置 -->
     <div id="site-footer-placeholder"></div>
 
     <script src="common.js"></script>
