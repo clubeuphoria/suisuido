@@ -81,6 +81,19 @@
         }
         p { color: #4a5568; margin-bottom: 20px; font-size: 1.05rem; }
 
+        /* ガイド用画像スタイル */
+        .guide-image-box {
+            text-align: center;
+            margin: 20px 0 25px 0;
+        }
+        .guide-image-box img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            border: 1px solid #eae6df;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+        }
+
         .care-box {
             background: #faf8f5;
             padding: 20px;
@@ -156,13 +169,21 @@
             <h2>メダカを元気に育てる基本のステップ</h2>
             <p>メダカ飼育で一番大切なのは「水」です。初めての方でも分かりやすい、水作りと日々の管理のコツをご紹介します。</p>
 
-            <h3 class="sub-heading">1. カルキ抜き（塩素抜き）をしっかり行う</h3>
+            <!-- 水作りの解説と画像 (water_guide.jpg) -->
+            <h3 class="sub-heading">1. カルキ抜きと正しい水作り</h3>
+            <div class="guide-image-box">
+                <img src="water_guide.jpg" alt="水作りガイド">
+            </div>
             <div class="care-box">
                 <h4>水道水はそのまま使わない</h4>
                 <p>水道水に含まれるカルキ（塩素）はメダカにとって刺激が強すぎます。市販のカルキ抜き剤を使うか、バケツなどに汲み置きした水を日光に2〜3日当ててから使いましょう。</p>
             </div>
 
-            <h3 class="sub-heading">2. エサやりは「1日数回、数分で食べ切れる量」</h3>
+            <!-- 飼い方の解説と画像 (care_guide.jpg) -->
+            <h3 class="sub-heading">2. 日々の飼育とエサやりのコツ</h3>
+            <div class="guide-image-box">
+                <img src="care_guide.jpg" alt="飼い方ガイド">
+            </div>
             <div class="care-box">
                 <h4>与えすぎに注意！</h4>
                 <p>メダカは食べ残したエサが水底にたまると、水が汚れて病気や水質悪化の原因になります。1〜2分程度で食べきれる量を、1日1〜2回に分けて与えてください。</p>
@@ -171,7 +192,7 @@
             <h3 class="sub-heading">3. 水替えのコツ</h3>
             <div class="care-box">
                 <h4>一度に全部の水を換えない</h4>
-                <p>水が汚れてきたからといって、容器の水をすべて新しい水道水に替えてしまうと、メダカがショックを受けてしまいます。水替えは全体の3分の1〜半分程度を、古水園に残しながら定期的に行いましょう。</p>
+                <p>水が汚れてきたからといって、容器の水をすべて新しい水道水に替えてしまうと、メダカがショックを受けてしまいます。水替えは全体の3分の1〜半分程度を、古水を残しながら定期的に行いましょう。</p>
             </div>
 
             <div class="back-home">
