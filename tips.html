@@ -178,7 +178,14 @@
         .back-btn:hover {
             background-color: #0F203C;
         }
-
+<!-- 画面右下にひょっこり表示されるスイちゃんアイコン -->
+<a href="#contact" class="floating-character" title="お問い合わせへ">
+    <div class="char-bubble">いらっしゃい！🐟</div>
+    <div class="char-img-wrap">
+        <!-- 画像ファイル（sui_icon.png）を同じフォルダ内に置いてください -->
+        <img src="sui_icon.png" alt="スイちゃん">
+    </div>
+</a>
         footer {
             text-align: center;
             padding: 30px;
@@ -188,7 +195,73 @@
             margin-top: 60px;
             letter-spacing: 0.05em;
         }
+/* ------------------------------------------
+   画面右下ひょっこり固定スイちゃんCSS
+------------------------------------------ */
+.floating-character {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 999;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+    text-decoration: none;
+}
 
+.floating-character:hover {
+    transform: translateY(-5px) scale(1.05);
+}
+
+.char-bubble {
+    background-color: #ffffff;
+    color: #1B365D;
+    font-size: 0.8rem;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 15px;
+    border: 2px solid #C5A059;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.12);
+    margin-bottom: 6px;
+    white-space: nowrap;
+    position: relative;
+}
+
+/* 吹き出しの三角部分 */
+.char-bubble::after {
+    content: "";
+    position: absolute;
+    bottom: -7px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 7px 6px 0 6px;
+    border-style: solid;
+    border-color: #C5A059 transparent transparent transparent;
+}
+
+.char-img-wrap {
+    width: 85px;
+    height: 85px;
+    border-radius: 50%;
+    border: 3px solid #C5A059;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.18);
+    overflow: hidden;
+    background-color: #ffffff;
+    margin: 0 auto;
+}
+
+.char-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* スマホ用のサイズ調整 */
+@media (max-width: 600px) {
+    .floating-character { bottom: 15px; right: 15px; }
+    .char-img-wrap { width: 65px; height: 65px; }
+    .char-bubble { font-size: 0.7rem; padding: 3px 8px; }
+}
         @media (max-width: 600px) {
             .nav-links { gap: 10px; font-size: 0.85rem; }
             header.sub-header h1 { font-size: 1.8rem; }
