@@ -411,3 +411,95 @@
             <div class="about-text">身近な生き物である<span>メダカ</span>と<span>障がい福祉</span>を掛け合わせることで、誰一人取り残さないインクルーシブな地域社会と持続可能な交流の場を実現することを目指しています。</div>
 
             <div class="vision-grid">
+                <div class="vision-card">
+                    <h4>インクルーシブなコミュニティ</h4>
+                    <p>手作りのキャラクターなどを介し、障がいの有無に関わらず多様な人々が自然に集う場を創出し、福祉に対する心理的ハードルを下げます。</p>
+                </div>
+                <div class="vision-card">
+                    <h4>温かいコミュニケーション</h4>
+                    <p>地域住民や子どもたちとの接客・交流を通じ、言葉だけに留まらない非言語の温かい交流を育み、利用者の安心感や生きがいを生み出します。</p>
+                </div>
+                <div class="vision-card">
+                    <h4>働く喜びと役割の実感</h4>
+                    <p>メダカの販売や接客のお手伝いを通じて新たな活動機会を提供し、地域の一員として「働く喜び」を感じられる環境を整え、将来的な事業化も視野に入れています。</p>
+                </div>
+                <div class="vision-card">
+                    <h4>命の教育と持続可能な運営</h4>
+                    <p>メダカの飼育を通じて子どもたちに命の大切さや環境モラルを伝え、法人の公的活動として地域に永続して根ざすサステナブルな運営体制を築きます。</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="varieties">
+            <h2>取扱品種</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>ヒメダカ</h3>
+                    <p>オレンジボディの日本人に親しみやすいメダカです。</p>
+                </div>
+                <div class="card">
+                    <h3>楊貴妃（ようきひ）</h3>
+                    <p>鮮やかな朱赤色が特徴の、大変人気の高い定番品種です。</p>
+                </div>
+                <div class="card">
+                    <h3>幹之（みゆき）</h3>
+                    <p>背中が青く輝く神秘的な美しさを持つ品種です。</p>
+                </div>
+                <div class="card">
+                    <h3>オロチ</h3>
+                    <p>全身が漆黒で、迫力ある品種です。</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="access">
+            <h2>営業案内</h2>
+            <table class="info-table">
+                <tr><th>営業時間</th><td>事業所開所日の 10:00 ～ 17:00</td></tr>
+                <tr><th>電話番号</th><td>0287-46-5430</td></tr>
+                <tr><th>所在地</th><td>栃木県大田原市余瀬</td></tr>
+                <tr><th>駐車場</th><td>あり</td></tr>
+            </table>
+        </section>
+
+        <section id="contact">
+            <h2>お問い合わせ</h2>
+            <p style="text-align: center; color: #666; margin-bottom: 25px;">メダカの飼育のご相談など、お気軽にお問い合わせください。</p>
+            <div class="contact-box">
+                <a href="https://ssl.form-mailer.jp/fms/99b774d2891289" target="_blank" rel="noopener noreferrer" class="contact-btn">
+                    お問い合わせフォームを開く
+                </a>
+                <div class="contact-note">※外部の専用入力ページ（フォームメーラー）へ移動します。</div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 画面右下にひょっこり表示されるスイちゃんアイコン -->
+    <a href="#contact" class="floating-character" title="お問い合わせへ">
+        <div class="char-bubble">いらっしゃい！🐟</div>
+        <div class="char-img-wrap">
+            <img src="sui_icon.png" alt="スイちゃん">
+        </div>
+    </a>
+
+    <footer>
+        <p>&copy; 余瀬のめだか屋さん すいすい堂 All Rights Reserved.</p>
+    </footer>
+
+    <script src="news.js"></script>
+    <script>
+        const container = document.getElementById('home-news-container');
+        if (container && typeof newsData !== 'undefined') {
+            const limitNews = newsData.slice(0, 2);
+            limitNews.forEach(item => {
+                const li = document.createElement('li');
+                li.innerHTML = `
+                    <time datetime="${item.date}">${item.displayDate}</time>
+                    <a href="news.html">${item.title}</a>
+                `;
+                container.appendChild(li);
+            });
+        }
+    </script>
+</body>
+</html>
