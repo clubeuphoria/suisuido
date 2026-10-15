@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function() {
     if (floatPlaceholder) {
         floatPlaceholder.innerHTML = `
         <a href="index.html#contact" class="floating-character" title="お問い合わせへ">
-            <div class="char-bubble">いらっしゃい！🐟</div>
+            <div class="char-bubble">スイちゃんだよ！🐟</div>
             <div class="char-img-wrap">
                 <img src="sui_icon.png" alt="スイちゃん">
             </div>
