@@ -27,11 +27,11 @@
         /* 共通ナビゲーションのスタイル */
         nav.site-nav {
             background-color: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(5px);
-            border-bottom: 1px solid #eae6df;
-            position: sticky;
-            top: 0;
-            z-index: 100;
+   　　　　　backdrop-filter: blur(5px);
+    　　　　 border-bottom: 1px solid #eae6df;
+            position: sticky;  /* ここがポイント：画面上部に固定します */
+            top: 0;            /* 画面の一番上から固定スタート */
+            z-index: 100;      /* 他のコンテンツの下に隠れないように最前面へ */
             padding: 12px 20px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.03);
         }
