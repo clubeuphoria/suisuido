@@ -178,14 +178,7 @@
         .back-btn:hover {
             background-color: #0F203C;
         }
-<!-- 画面右下にひょっこり表示されるスイちゃんアイコン -->
-<a href="#contact" class="floating-character" title="お問い合わせへ">
-    <div class="char-bubble">いらっしゃい！🐟</div>
-    <div class="char-img-wrap">
-        <!-- 画像ファイル（sui_icon.png）を同じフォルダ内に置いてください -->
-        <img src="sui_icon.png" alt="スイちゃん">
-    </div>
-</a>
+
         footer {
             text-align: center;
             padding: 30px;
@@ -195,7 +188,13 @@
             margin-top: 60px;
             letter-spacing: 0.05em;
         }
-/* ------------------------------------------
+
+        @media (max-width: 600px) {
+            .nav-links { gap: 10px; font-size: 0.85rem; }
+            header.sub-header h1 { font-size: 1.8rem; }
+            section { padding: 25px 15px; }
+        }
+        /* ------------------------------------------
    画面右下ひょっこり固定スイちゃんCSS
 ------------------------------------------ */
 .floating-character {
@@ -262,11 +261,6 @@
     .char-img-wrap { width: 65px; height: 65px; }
     .char-bubble { font-size: 0.7rem; padding: 3px 8px; }
 }
-        @media (max-width: 600px) {
-            .nav-links { gap: 10px; font-size: 0.85rem; }
-            header.sub-header h1 { font-size: 1.8rem; }
-            section { padding: 25px 15px; }
-        }
     </style>
 </head>
 <body>
@@ -337,7 +331,14 @@
             </div>
         </section>
     </main>
-
+<!-- 画面右下にひょっこり表示されるスイちゃんアイコン -->
+<a href="#contact" class="floating-character" title="お問い合わせへ">
+    <div class="char-bubble">いらっしゃい！🐟</div>
+    <div class="char-img-wrap">
+        <!-- 画像ファイル（sui_icon.png）を同じフォルダ内に置いてください -->
+        <img src="sui_icon.png" alt="スイちゃん">
+    </div>
+</a>
     <footer>
         <p>&copy; すいすい堂 All Rights Reserved.</p>
     </footer>
